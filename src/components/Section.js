@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Option from "./Option";
+import { Components } from "../contexts";
 import '../globalStyles/main.sass';
 import '../globalStyles/normalize.css';
 
-const Section = ({ product, select, productKey, components }) => {
+const Section = ({ product, select, productKey }) => {
   const options = Object.entries(product.options);
+  const { components } = useContext(Components)
   return (
     <div className={"spec-sheet__component"}>
       <h4 className={"component__title"}>{product.name}</h4>

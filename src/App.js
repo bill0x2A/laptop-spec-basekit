@@ -1,8 +1,9 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import Choices from "./components/Choices";
 import Summary from "./components/Summary";
 import Header from "./components/Header";
 import { componentType } from "./constants/productList";
+import { Components } from "./contexts";
 import "./globalStyles/normalize.css";
 import "./globalStyles/main.sass";
 
@@ -28,13 +29,13 @@ const App = () => {
   };
 
   return (
-    <Fragment>
+    <Components.Provider value={{components, setComponents}}>
       <Header />
       <div className="content">
-        <Choices components={components} select={partSelectionHandler} />
-        <Summary components={components} buy={purchase} />
+        <Choices select={partSelectionHandler} />
+        <Summary buy={purchase} />
       </div>
-    </Fragment>
+    </Components.Provider>
   );
 };
 

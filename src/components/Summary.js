@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { products } from "../constants/productList";
+import { Components } from "../contexts";
 import "../globalStyles/main.sass";
 import "../globalStyles/normalize.css";
 
-const Summary = ({ components, buy }) => {
+const Summary = ({ buy }) => {
+
+  const { components } = useContext(Components)
+
   const chosenParts = Object.entries(components).map(
     ([type, key]) => products[type].options[key]
   );

@@ -5,7 +5,7 @@ import '../globalStyles/main.sass';
 import '../globalStyles/normalize.css';
 
 
-const Choices = ({ select, components }) => {
+const Choices = ({ select }) => {
   return (
     <div className="spec-sheet rounded-grey-border">
       <h2>Customisation Choices</h2>
@@ -14,7 +14,6 @@ const Choices = ({ select, components }) => {
             product={product}
             select={select}
             productKey={key}
-            components={components}
             key={key}
         />
       ))}
