@@ -29,7 +29,7 @@ const App = () => {
   };
 
   return (
-    <Components.Provider value={{components, setComponents}}>
+    <Components.Provider value={{components, partSelectionHandler}}>
       <Header />
       <div className="content">
         <Choices select={partSelectionHandler} />

@@ -1,19 +1,20 @@
-import React, { useContext } from "react";
+import React, { Component, useContext } from "react";
 import Option from "./Option";
 import { Components } from "../contexts";
 import '../globalStyles/main.sass';
 import '../globalStyles/normalize.css';
 
-const Section = ({ product, select, productKey }) => {
+const Section = ({ product, productKey, componentContext = Components}) => {
   const options = Object.entries(product.options);
-  const { components } = useContext(Components)
+  let { components, partSelectionHandler } = useContext(componentContext)
+
   return (
     <div className={"spec-sheet__component"}>
       <h4 className={"component__title"}>{product.name}</h4>
       <ul className={"list--no-style"}>
         {options.map(([itemKey, option]) => (
             <Option
-                click={() => select(productKey, itemKey)}
+                click={() => partSelectionHandler(productKey, itemKey)}
                 item={option}
                 key={itemKey}
                 selected={components[productKey] === itemKey}

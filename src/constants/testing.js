@@ -1,4 +1,5 @@
 import { componentType } from "./productList";
+import { createContext } from "react";
 
 export const testComponents = {
   [componentType.SCREEN]: "13-retina",
@@ -28,3 +29,8 @@ export const testItem = {
   name: "2.7GHz quad-core Intel Core i7 processor, Turbo Boost up to 3.6GHz",
   price: 300,
 };
+
+export const testContext = createContext({
+  components: testComponents,
+  partSelectionHandler: (type, id) => [type, id],
+});

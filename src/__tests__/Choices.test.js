@@ -1,8 +1,7 @@
 import Choices from "../components/Choices";
 import Enzyme, { render } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import { testComponents, testProduct } from "../constants/testing";
-import { componentType } from "../constants/productList";
+import { testComponents, testContext } from "../constants/testing";
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -13,6 +12,7 @@ describe("<Choices/>", () => {
         <Choices
           select={null}
           components={testComponents}
+          componentContext={testContext}
         />
       );
       expect(wrapper.find(".spec-sheet__component").length).toBe(5);

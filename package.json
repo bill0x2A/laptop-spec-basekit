@@ -37,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "jest-puppeteer": "^5.0.4",
+    "puppeteer": "^10.2.0"
   }
 }

@@ -4,9 +4,9 @@ import { Components } from "../contexts";
 import "../globalStyles/main.sass";
 import "../globalStyles/normalize.css";
 
-const Summary = ({ buy }) => {
+const Summary = ({ buy, componentsContext = Components }) => {
 
-  const { components } = useContext(Components)
+  const { components } = useContext(componentsContext)
 
   const chosenParts = Object.entries(components).map(
     ([type, key]) => products[type].options[key]
